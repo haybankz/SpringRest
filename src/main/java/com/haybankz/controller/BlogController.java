@@ -18,8 +18,14 @@ public class BlogController {
     @Autowired
     BlogRepository blogRepository;
 
+    @GetMapping("/")
+    public String index(){
+//        return blogMockedData.fetchBlogs();
+        return "welcome to my spring boot test app : rest api";
+    }
+
     @GetMapping("/blog")
-    public List<Blog> index(){
+    public List<Blog> findOne(){
 //        return blogMockedData.fetchBlogs();
         return blogRepository.findAll();
     }
